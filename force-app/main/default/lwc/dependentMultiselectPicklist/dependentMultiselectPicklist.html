@@ -1,0 +1,21 @@
+<template>
+    <!-- Parent Picklist: Reason -->
+    <lightning-combobox
+        label="Reason"
+        value={selectedReason}
+        options={reasonOptions}
+        onchange={handleReasonChange}>
+    </lightning-combobox>
+
+    <!-- Dependent Multi-Select Picklist: Case Reason Detail -->
+    <template if:true={caseReasonDetails.length}>
+        <lightning-dual-listbox
+            label="Case Reason Detail"
+            source-label="Available"
+            selected-label="Selected"
+            options={caseReasonDetails}
+            value={selectedCaseReasonDetails}
+            onchange={handleCaseReasonDetailChange}>
+        </lightning-dual-listbox>
+    </template>
+</template>
